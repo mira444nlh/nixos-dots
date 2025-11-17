@@ -55,7 +55,7 @@
   hardware.nvidia.open = false;
 
   services.displayManager.ly.enable = true;
-  programs.niri.enable = true;  
+  #programs.niri.enable = true;  
   programs.zsh.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
@@ -92,6 +92,7 @@
     home-manager
     curl
     ripgrep
+    xwayland-satellite
   ];
   
   fonts.packages = with pkgs; [
