@@ -6,11 +6,10 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hal"; # Define your hostname.
+  networking.hostName = "hal";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   
   hardware.bluetooth.enable = true;
@@ -74,25 +73,27 @@
   #nix.settings.substituters = lib.mkForce [ "https://nixos-cache-proxy.cofob.dev" ];
 
   environment.systemPackages = with pkgs; [
-    neovim
+    gcc
     vim
-    telegram-desktop
-    zsh
-    fuzzel
-    fastfetch
-    alacritty
-    stow
-    fzf
-    zoxide
+    neovim
     wget
     git
+    curl
+    alacritty
+    tmux
+    zsh
+    fzf
+    zoxide
+    ripgrep
+    fastfetch
+    stow
     firefox
     chromium
-    tmux
-    home-manager
-    curl
-    ripgrep
+    telegram-desktop
+    element-desktop
     xwayland-satellite
+    fuzzel
+    home-manager
   ];
   
   fonts.packages = with pkgs; [
