@@ -37,7 +37,7 @@
             {
                 home-manager = {
                     useGlobalPkgs = true;
-                    #useUserPackages = true;
+                    useUserPackages = true;
                     users.mira = import ./hosts/hal/home.nix;
                     extraSpecialArgs = {inherit inputs;};
                 };

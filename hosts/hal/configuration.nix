@@ -32,6 +32,11 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.substituters = lib.mkForce [ "https://nixos-cache-proxy.cofob.dev" ];
+
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
   
   environment.systemPackages = with pkgs; [
     gcc
@@ -51,6 +56,8 @@
     fuzzel
     home-manager
     minimal-grub-theme
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
   ];
   
   fonts.packages = with pkgs; [
