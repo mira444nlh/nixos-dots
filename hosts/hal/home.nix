@@ -21,6 +21,8 @@
         tree
         btop
         fastfetch
+        kiwix
+        kiwix-tools
     ];
 
     home.stateVersion = "25.05";

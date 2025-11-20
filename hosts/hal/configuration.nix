@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, inputs, pkgs, lib, ... }:
 
 {
   imports =
@@ -28,6 +28,8 @@
   programs.zsh.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+
+  #nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

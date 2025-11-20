@@ -40,6 +40,7 @@
                     useUserPackages = true;
                     users.mira = import ./hosts/hal/home.nix;
                     extraSpecialArgs = {inherit inputs;};
+                    backupFileExtension = "backup";
                 };
             }
         ];
