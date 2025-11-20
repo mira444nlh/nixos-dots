@@ -9,6 +9,8 @@
     enable = true;
     settings = {
       prefer-no-csd = true;
+      gestures.hot-corners.enable = false;
+      hotkey-overlay.skip-at-startup = true;
 
       input = {
         keyboard = {
@@ -17,7 +19,10 @@
             options = "grp:alt_shift_toggle";
           };
         };
-        focus-follows-mouse.max-scroll-amount = "0%";
+        focus-follows-mouse = {
+          enable = true;
+          max-scroll-amount = "0%";
+        };
       };
       outputs = {
         "DP-1" = {
@@ -44,6 +49,67 @@
           };
         };
       };
+      layout = {
+        gaps = 12;
+
+        preset-column-widths = [
+          { proportion = 0.33333; }
+          { proportion = 0.5; }
+          { proportion = 0.66667; }
+        ];
+
+        default-column-width = {
+          proportion = 0.5;
+        };
+
+        focus-ring = {
+          width = 3;
+          active.color = "#cba6f7";
+          inactive.color = "#505050";
+        };
+
+        border = {
+          enable = false;
+          width = 4;
+          active.color = "#ffc87f";
+          inactive.color = "#505050";
+          urgent.color = "#9b0000";
+        };
+
+        shadow = {
+          enable = false;
+          softness = 30;
+          spread = 5;
+          offset = {
+            x = 0;
+            y = 5;
+          };
+          color = "#0007";
+        };
+      };
+
+      screenshot-path =
+        "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+
+      window-rules = [
+        {
+          geometry-corner-radius = {
+            top-left = 8.0;
+            top-right = 8.0;
+            bottom-left = 8.0;
+            bottom-right = 8.0;
+          };
+          clip-to-geometry = true;
+        }
+        {
+          matches = [ {
+            app-id = ''firefox$'';
+            title = ''^Picture-in-Picture$'';
+          } ];
+          open-floating = true;
+        }
+      ];
+
       binds = with config.lib.niri.actions; {
         "Mod+Shift+Slash".action = show-hotkey-overlay;
 

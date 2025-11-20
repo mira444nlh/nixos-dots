@@ -18,11 +18,13 @@
         element-desktop
         obsidian
         bat
+        dysk
         tree
         btop
         fastfetch
         kiwix
         kiwix-tools
+        prismlauncher
     ];
 
     home.stateVersion = "25.05";
