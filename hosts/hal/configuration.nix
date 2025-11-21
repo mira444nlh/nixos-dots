@@ -23,7 +23,7 @@
   };
 
   services.displayManager.ly.enable = true;
-  #programs.niri.enable = true;  
+  programs.niri.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
   programs.neovim.enable = true;
@@ -60,6 +60,12 @@
     minimal-grub-theme
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+    xdg-user-dirs
+    kdePackages.dolphin
+    kdePackages.plasma-workspace
+    kdePackages.qtsvg
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
   ];
   
   fonts.packages = with pkgs; [

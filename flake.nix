@@ -24,9 +24,14 @@
         inputs.nixpkgs.follows = "nixpkgs";
         inputs.dgop.follows = "dgop";
     };
+
+    catppuccin = {
+        url = "github:catppuccin/nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, niri, dgop, dankMaterialShell, ... } @ inputs:
+  outputs = { nixpkgs, home-manager, ... } @ inputs:
   {
     nixosConfigurations.hal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
