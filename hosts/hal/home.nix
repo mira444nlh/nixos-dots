@@ -6,7 +6,7 @@
         ../../homeManagerModules/git.nix
         ../../homeManagerModules/niri.nix
         ../../homeManagerModules/dankMaterialShell.nix
-        ../../homeManagerModules/gtk.nix
+        #../../homeManagerModules/gtk.nix
     ];
 
     home.username = "mira";
@@ -14,7 +14,7 @@
 
     home.pointerCursor = {
         name = "Catppuccin-Mocha-Dark-Cursors";
-        package = pkgs.catppuccin-cursors.mochaDark;
+        package = pkgs.catppuccin-cursors.mochaMauve;
         size = 16;
 
         gtk.enable = true;
@@ -38,6 +38,7 @@
         tree
         btop
         fastfetch
+        qbittorrent
         kiwix
         kiwix-tools
         prismlauncher
@@ -48,11 +49,11 @@
         libreoffice
         hunspell
         hunspellDicts.ru_RU
+        catppuccin-gtk
         catppuccin-cursors
-        catppuccin-papirus-folders
-        papirus-folders
         kdePackages.qt6ct
         #libsForQt5.qt5ct
+        xfce.thunar
     ];
 
     home.stateVersion = "25.05";

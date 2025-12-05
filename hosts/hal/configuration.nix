@@ -9,23 +9,36 @@
       ../../nixosModules/nvidia.nix
       ../../nixosModules/pipewire.nix
       ../../nixosModules/users.nix
+      ../../nixosModules/bluetooth.nix
     ];
 
   networking.hostName = "hal";
   networking.networkmanager.enable = true;
   
-  hardware.bluetooth.enable = true;
-
   services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
+  xdg.mime.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+  };
+
   services.displayManager.ly.enable = true;
   programs.niri.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
+  programs.zsh.enableCompletion = false;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
@@ -53,19 +66,22 @@
     zoxide
     ripgrep
     stow
+    grim
+    slurp
     firefox
     xwayland-satellite
     fuzzel
     home-manager
     minimal-grub-theme
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
     xdg-user-dirs
     kdePackages.dolphin
     kdePackages.plasma-workspace
     kdePackages.qtsvg
     kdePackages.kio-fuse
     kdePackages.kio-extras
+    kdePackages.kservice
+    python310Packages.pip
+    python310
   ];
   
   fonts.packages = with pkgs; [

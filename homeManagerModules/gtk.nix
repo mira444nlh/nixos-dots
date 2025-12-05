@@ -1,24 +1,19 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
-  ];
-
   gtk = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      accent = "mauve";
-      size = "standard";
-      tweaks = [ "normal" ];
+    theme = {
+      package = pkgs.catppuccin-gtk;
+      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
     };
+
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders;
-      flavor = "mocha";
-      accent = "mauve";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "mauve";
+      };
+      name = lib.mkForce "Papirus-Dark";
     };
   };
 }

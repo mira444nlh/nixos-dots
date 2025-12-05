@@ -11,6 +11,15 @@
       prefer-no-csd = true;
       gestures.hot-corners.enable = false;
       hotkey-overlay.skip-at-startup = true;
+      screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+
+      environment = {
+        QT_QPA_PLATFORM = "wayland";
+        XDG_CURRENT_DESKTOP = "niri";
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        QT_QPA_PLATFORMTHEME = "gtk3";
+        QT_QPA_PLATFORMTHEME_QT6 = "gtk3";
+      };
 
       input = {
         keyboard = {
@@ -51,6 +60,7 @@
       };
       layout = {
         gaps = 12;
+        background-color = "transparent";
 
         preset-column-widths = [
           { proportion = 0.33333; }
@@ -88,8 +98,14 @@
         };
       };
 
-      screenshot-path =
-        "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+      layer-rules = [
+        {
+          matches = [ {
+            namespace = "^quickshell$"; # For visible wallpaper in the overview in dms
+          } ];
+          place-within-backdrop = true;
+        }
+      ];
 
       window-rules = [
         {
@@ -255,6 +271,7 @@
 
         "Mod+W".action = toggle-column-tabbed-display;
 
+        "Mod+S".action = spawn-sh "AREA=$(slurp); FILE=~/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png; grim -g \"$AREA\" \"$FILE\" && wl-copy < \"$FILE\"";
         #"Print".action      = screenshot;
         #"Ctrl+Print".action = screenshot-screen;
         #"Alt+Print".action  = screenshot-window;
