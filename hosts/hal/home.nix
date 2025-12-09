@@ -14,7 +14,7 @@
 
     home.pointerCursor = {
         name = "Catppuccin-Mocha-Dark-Cursors";
-        package = pkgs.catppuccin-cursors.mochaMauve;
+        package = pkgs.catppuccin-cursors.mochaDark;
         size = 16;
 
         gtk.enable = true;
@@ -37,6 +37,9 @@
         dysk
         tree
         btop
+        unzip
+        clang
+        clang-tools
         fastfetch
         qbittorrent
         kiwix
@@ -54,6 +57,7 @@
         kdePackages.qt6ct
         #libsForQt5.qt5ct
         xfce.thunar
+        wofi
     ];
 
     home.stateVersion = "25.05";

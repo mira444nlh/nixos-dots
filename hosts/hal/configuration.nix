@@ -55,6 +55,8 @@
   
   environment.systemPackages = with pkgs; [
     gcc
+    rustc
+    cargo
     vim
     neovim
     wget

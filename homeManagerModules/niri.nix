@@ -21,6 +21,11 @@
         QT_QPA_PLATFORMTHEME_QT6 = "gtk3";
       };
 
+      cursor = {
+        theme = "Catppuccin-Mocha-Dark-Cursors";
+        size = 16;
+      };
+
       input = {
         keyboard = {
           xkb = {
