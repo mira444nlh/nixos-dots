@@ -102,7 +102,7 @@
           color = "#0007";
         };
       };
-
+    
       layer-rules = [
         {
           matches = [ {
@@ -135,7 +135,7 @@
         "Mod+Shift+Slash".action = show-hotkey-overlay;
 
         "Mod+C".action = spawn "alacritty";
-        "Mod+D".action = spawn "fuzzel";
+        "Mod+D".action = spawn-sh "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15";
         #"Super+Alt+L".action = spawn "swaylock";
 
         "Super+Alt+S".action = spawn-sh "pkill orca || exec orca";

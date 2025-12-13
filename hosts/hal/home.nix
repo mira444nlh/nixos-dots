@@ -6,6 +6,7 @@
         ../../homeManagerModules/git.nix
         ../../homeManagerModules/niri.nix
         ../../homeManagerModules/dankMaterialShell.nix
+        ../../homeManagerModules/wofi.nix
         #../../homeManagerModules/gtk.nix
     ];
 

@@ -84,10 +84,14 @@
     kdePackages.kservice
     python310Packages.pip
     python310
+    nemo
   ];
   
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    maple-mono.truetype
+    maple-mono.NF-unhinted
+    maple-mono.NF-CN-unhinted
   ];
 
   system.stateVersion = "25.05";
